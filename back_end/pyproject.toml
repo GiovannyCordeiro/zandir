@@ -25,3 +25,4 @@ build-backend = "poetry.core.masonry.api"
 run = 'python manage.py runserver'
 migrations = "python manage.py makemigrations"
 migrate = 'python manage.py migrate'
+seed = 'python manage.py create_movie'
