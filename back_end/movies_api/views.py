@@ -15,4 +15,8 @@ def get_movies(request):
         return Response(status=status.HTTP_400_BAD_REQUEST)
     movies = Movies.objects.all()
     serilizer = MoviesSerializer(movies, many=True)
-    return Response({'hello': serilizer.data})
+    return Response({'data': serilizer.data})
+
+@api_view(['GET'])
+def search_movies(request, movie_name):
+    return Response({'hello': movie_name})
