@@ -9,6 +9,8 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
+import Spinner from '../Spinner/Spinner'
+
 import { Movie } from '@/types/Movie'
 import { MovieResponse } from '@/types/MovieResponse'
 import api from '@/services/ApiMovies'
@@ -23,16 +25,20 @@ export default function ListMovies(){
   const [emptyMovie, setEmptyMovie] = useState<boolean>(false);
 
   const [errorInput, setErrorInput] = useState<boolean>(false);
+  const [loader, setLoader] = useState<boolean>(false);
 
   // Pesquisa dos filmes de forma inicial
   const handleFetch = async () => {
+    setLoader(true);
     try {
       setEmptyMovie(false);
       const response = await api.get<MovieResponse>('/v1/movies_api');
       setMovies(response.data.movies);
+      setLoader(false);
     } catch(error) {
       setError('⚙️🔧 Server error!');
       console.error(error);
+      setLoader(false);
     }
   }
 
@@ -51,6 +57,7 @@ export default function ListMovies(){
     setErrorInput(false);
 
     try {
+      setLoader(true);
       setError(null);
       const response = await api.get<MovieResponse>(`/v1/movies_api/search/${inputMovie.toLowerCase()}`);
       if (response.data.Error){
@@ -60,9 +67,11 @@ export default function ListMovies(){
       }
       setEmptyMovie(false);
       setMovies(response.data.movies);
+      setLoader(false);
     } catch(error) {
       setError('⚙️🔧 Server error!');
       console.error(error);
+      setLoader(false);
     }
   }
 
@@ -92,6 +101,7 @@ export default function ListMovies(){
             />
           <Button className='rounded-xl text-base h-12' type="submit" onClick={fetchMovie}>Search!</Button>
         </div>
+        {loader && <Spinner />}
         <section className='w-5/6 h-4/6 flex flex-col items-center gap-2 md:w-4/6 lg:w-3/6'>
           {emptyMovie && <p>Sorry, we couldn't find any movie with that name 😭</p>}
           {movies.map((movie) => (
