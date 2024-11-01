@@ -45,6 +45,7 @@ export default function ListMovies(){
 
     if (inputMovie.length === 0){
       setErrorInput(true);
+      handleFetch();
       return;
     }
     setErrorInput(false);
