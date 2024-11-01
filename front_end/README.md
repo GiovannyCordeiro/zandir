@@ -1,50 +1,35 @@
-# React + TypeScript + Vite
+![Zandir logo](../assets//imgs/zandir!.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🎨 Front-end
 
-Currently, two official plugins are available:
+Demonstração da aplicação com sua responsividade!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+| ![Large](../assets/imgs/LG.png) | ![Medium](../assets/imgs/MD.png) | ![Small](../assets/imgs/SM.png) |
+|--------------------------------|--------------------------------|--------------------------------|
 
-## Expanding the ESLint configuration
+## 💻 Tecnologias 
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React/Vite
+- Vitest
+- Axios
+- SHADCN
+- React Dom
+- React Test Library
 
-- Configure the top-level `parserOptions` property like this:
+# 🚀 Setup da aplicação
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- `npm install`: Para instalar todas as depêndencias
+- `npm run dev`: Para iniciar a aplicação
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- `npm run test`: Para rodar os testes!
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+# 📖 Estrutura da aplicação
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Todos os componentes estão reunidos dentro da Diretório `components` 
+com seus respectivos testes
+- A Diretório `services` contem lógicas especificas que podem ser reutilizadas
+em outros componentes, como chamdas de API.
+- Diretório `Types` contém as interfaces gerais e tipos personalizados que podem
+ser utilizados em varios componentes.
+- Diretório `Assets` designada por armazenar imagens, icones e fontes
+- Diretório `Test` responsave por armazenar arquivos de configuração de testes
