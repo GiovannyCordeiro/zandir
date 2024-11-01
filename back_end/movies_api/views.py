@@ -8,7 +8,13 @@ from rest_framework import status
 from .models import Movies
 from .api.serializers import MoviesSerializer
 
+from dotenv import load_dotenv
+import requests
+import os
 
+load_dotenv()
+
+# Controladores das rotas
 @api_view(['GET'])
 def get_movies(request):
     if request.method != 'GET':
@@ -19,4 +25,41 @@ def get_movies(request):
 
 @api_view(['GET'])
 def search_movies(request, movie_name):
-    return Response({'hello': movie_name})
+    try:
+
+        movie = Movies.objects.get(title=movie_name)
+
+        serilizer = MoviesSerializer(movie)
+        return Response({'data': serilizer.data})
+    except Movies.DoesNotExist:
+
+        data_movie = request_movie(movie_name)
+        created_movie = movie_persistence(data_movie)
+
+        serializer = MoviesSerializer(created_movie)
+        return Response({'data': serializer.data})
+
+
+# Lógica referente a requisição da API externa!
+def request_movie(movie_name):
+    url = f"http://www.omdbapi.com/?t={movie_name}&apikey={os.getenv('API_KEY')}"
+    response = requests.get(url)
+    return response.json()
+
+def movie_persistence(movie_data):
+    try:
+
+        new_movie = Movies(
+            title=str(movie_data['Title']),
+            plot= str(movie_data['Plot']),
+            year_realease= str(movie_data['Year']),
+            img_url= str(movie_data['Poster'])
+        )
+
+        new_movie.full_clean()
+        new_movie.save()
+
+        return new_movie
+
+    except:
+        return Response({'data': 'Error save movie'})
