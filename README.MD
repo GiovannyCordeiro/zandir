@@ -34,6 +34,8 @@ do meu teste tecnico da empresa Zandir!
 1. `npm install`: Instalar todas as depêndencias necessárias
 2. `npm run dev`: Iniciar ambiente de desenvolvimento
 
+- `npm run test`: Iniciar testes dos componentes no ambiente desenvolvimento
+
 ### Setup Back-end
 1. `poetry install`: Instalar todas as depêndencias necessárias
 2. `poetry shell`: Iniciar ambiente virtual
