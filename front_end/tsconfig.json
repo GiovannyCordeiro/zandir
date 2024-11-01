@@ -9,6 +9,7 @@
     }
   ],
   "compilerOptions": {
+    "types": ["vitest"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
