@@ -3,7 +3,7 @@
 # 📌 Teste técnico: Zandir
 
 Olá! Me chamo [Giovanny dos Santos Cordeiro](https://giovannydev.com.br/) e essa é a realização
-do meu teste tecnico da empresa Zandir!
+do meu teste tecnico para empresa Zandir!
 
 ## 💯 Preview da aplicação!
 
@@ -48,36 +48,38 @@ Dentro do ambiente virtual execute:
 4. Faça a configuração do seu arquivo `.env` de acordo com o modelo `.env.example`
 5. `task run`: Executar o ambiênte de desenvolvimento
 
-## 🌟 Principios técnicos e aplicações realizadas:
+## 🌟 Princípios  técnicos e aplicações realizadas:
 
-Visando o melhor desenvolvimento do projeto em tempo ábil decidi 
-aplicar alguns principios técnicos que julgo muito impotânte
-no desenvolvimento de um projeto, alguns deles foram:
+Para garantir o desenvolvimento eficiente do projeto no prazo determinado, 
+decidi aplicar alguns princípios técnicos que considero essenciais. Entre eles estão:
 
-- **Commits semânticos**: Commits semânticos tem como objetivo melhorar a padronização
-de commits no histórico do projeto, facilitar a leitura do histórico de alterações 
-em momentos oportunos e garantir uma uniformidade maior para uma equipe de desenvolvimento
+- **Commits semânticos**: Commits semânticos têm como objetivo padronizar o histórico 
+de commits do projeto, facilitar a leitura das mudanças em momentos estratégicos e 
+garantir maior consistência para a equipe.
 - **Git Flow**: Modelo ou estratégia amplamente utilizado no desenvolvimento de software
-entre equipes, promovendo um trabalho mais claro, eficiênte e objetivo utilizando branchs.
-- **Mobile-first**: Desenvolvimento focado em dispositivos moveis facilitando e presando significativamente pela 
-responsibidade e adequação na maioria dos dispositivos.
-- **Testes**: Elaboração de testes com finalidade de garantir a qualidade da aplicação e 
-evitar surgirmentos de Bugs futuros, além de promover uma documentação viva e pragmática
-a respeito do funcionamento do software.
+entre equipes, promovendo um trabalho mais claro, eficiênte e objetivo entre os membros
+do time utilizando branchs e pull requests.
+- **Mobile-first**: Desenvolvimento focado em dispositivos móveis, priorizando a 
+responsividade e garantindo uma boa adaptação em diversos dispositivos.
+- **Testes**: A elaboração de testes tem como objetivo garantir a qualidade da aplicação 
+e prevenir o surgimento de futuros bugs, além de proporcionar uma documentação viva e 
+prática sobre o funcionamento do software.
 
-Além desses principios implemetei no projeto:
-- **Atalhos** para pesquisa: Promove maior facilidade no uso da aplicação, melhorando significativamente o UX 
-e acessibilidade para alguns usuários
-- **Integração com API externa**: Implementação com a API externa que facilita a pesquisa de filmes
-- **Feedback de carregamento**: Loading com finalidade de melhorar a experiência do usuário.
-- **Tratamento de exceções**: Tratamento de erros e exceções com finalidade de manter um fluxo objetivo no código.
+Além desses princípios implemetei no projeto também:
+
+- **Atalho** para pesquisa: Com ojbeito vde promover maior facilidade no uso da aplicação, 
+melhorando significativamente o UX e acessibilidade para alguns usuários.
+- **Integração com API externa**: Implementação de uma API externa que simplifica a pesquisa de filmes.
+- **Feedback de carregamento**: Componente Loading com finalidade de melhorar a experiência do usuário.
+- **Tratamento de exceções**: Tratamento de erros e exceções com finalidade de manter um fluxo lógico
+mais consistente no código.
 
 ## 💡 Possiveis melhorias!
 
 - **Aplicar tecnica de memorização na chamada da API externa**: Como o utilização de API
-de terceiros é uma pratica bem comum utilizar memorização para evitar fazer multiplas
-requisições não somente ajuda na performace quando no custo da API, inclusive, produzi
-um [artigo técnico](https://dev.to/giovannycordeiro/memorizacao-em-ruby-5789) sobre esse assunto a um tempo atrás!
-- **Aplicar containers Docker para o projeto**: Aplicar containers dockers
-tem uma serie de vantagens, especialmente a portabilidade da aplicação, custo reduzido
-para setup e possibilidade de alocação em diversas formas de deploy.
+de terceiros, é uma pratica bem comum utilizar a técnica de memorização para evitar fazer multiplas
+requisições, isso não somente ajuda na performace, quando no custo de consumo da API externa. Inclusive, produzi
+um [artigo técnico](https://dev.to/giovannycordeiro/memorizacao-em-ruby-5789) sobre essa tecnica a um tempo atrás!
+- **Aplicar containers Docker para o projeto**: Aplicar containers dockers em um projeto
+agrega uma serie de vantagens, especialmente a portabilidade da aplicação, custo reduzido
+para setup e possibilidade de alocação em diversas formas de deploy sem muitos custos extras.
