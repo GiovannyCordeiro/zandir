@@ -21,7 +21,7 @@ def get_movies(request):
         return Response(status=status.HTTP_400_BAD_REQUEST)
     movies = Movies.objects.all()
     serilizer = MoviesSerializer(movies, many=True)
-    return Response({'data': serilizer.data})
+    return Response({'movies': serilizer.data})
 
 @api_view(['GET'])
 def search_movies(request, movie_name):
@@ -30,7 +30,7 @@ def search_movies(request, movie_name):
         movie = Movies.objects.get(title=movie_name.lower())
 
         serilizer = MoviesSerializer(movie)
-        return Response({'data': serilizer.data})
+        return Response({'movies': [serilizer.data]})
     except Movies.DoesNotExist:
 
         data_movie = request_movie(movie_name)
@@ -40,7 +40,7 @@ def search_movies(request, movie_name):
         created_movie = movie_persistence(data_movie)
         serializer = MoviesSerializer(created_movie)
 
-        return Response({'data': serializer.data})
+        return Response({'movies': [serializer.data]})
 
 
 # Lógica referente a requisição da API externa!
