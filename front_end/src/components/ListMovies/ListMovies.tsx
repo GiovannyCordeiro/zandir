@@ -99,6 +99,7 @@ export default function ListMovies(){
             placeholder={`${errorInput ? 'Please... type your movie here 🤔': 'Type your movie! 😊'}`}
             role="searchInput"
             />
+          <Input type="number" className='rounded-xl h-12 w-2/6 xl:w-1/6' placeholder='Year...'/>
           <Button className='rounded-xl text-base h-12' type="submit" onClick={fetchMovie}>Search!</Button>
         </div>
         {loader && <Spinner />}
