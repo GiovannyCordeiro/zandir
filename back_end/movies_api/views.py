@@ -34,16 +34,24 @@ def search_movies(request, movie_name):
     except Movies.DoesNotExist:
 
         data_movie = request_movie(movie_name)
-        created_movie = movie_persistence(data_movie)
+        if data_movie == False:
+            return Response({'Error': 'Movie Not found'})
 
+        created_movie = movie_persistence(data_movie)
         serializer = MoviesSerializer(created_movie)
+
         return Response({'data': serializer.data})
 
 
 # Lógica referente a requisição da API externa!
 def request_movie(movie_name):
+
     url = f"http://www.omdbapi.com/?t={movie_name}&apikey={os.getenv('API_KEY')}"
     response = requests.get(url)
+
+    if str(response.json()['Response']) == 'False':
+        return False
+
     return response.json()
 
 def movie_persistence(movie_data):
