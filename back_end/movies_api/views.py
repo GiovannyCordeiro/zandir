@@ -24,7 +24,7 @@ def get_movies(request):
     return Response({'movies': serilizer.data})
 
 @api_view(['GET'])
-def search_movies(request, movie_name):
+def search_movies(request, movie_name, year=None):
     try:
 
         movie = Movies.objects.get(title=movie_name.lower())
@@ -33,7 +33,7 @@ def search_movies(request, movie_name):
         return Response({'movies': [serilizer.data]})
     except Movies.DoesNotExist:
 
-        data_movie = request_movie(movie_name)
+        data_movie = request_movie(movie_name, year)
         if data_movie == False:
             return Response({'Error': 'Movie Not found'})
 
@@ -44,9 +44,13 @@ def search_movies(request, movie_name):
 
 
 # Lógica referente a requisição da API externa!
-def request_movie(movie_name):
+def request_movie(movie_name, year):
 
-    url = f"http://www.omdbapi.com/?t={movie_name}&apikey={os.getenv('API_KEY')}"
+    if year != None:
+        url = f"http://www.omdbapi.com/?t={movie_name}&y={year}&apikey={os.getenv('API_KEY')}"
+    else:
+        url = f"http://www.omdbapi.com/?t={movie_name}&apikey={os.getenv('API_KEY')}"
+
     response = requests.get(url)
 
     if str(response.json()['Response']) == 'False':

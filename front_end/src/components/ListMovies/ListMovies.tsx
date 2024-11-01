@@ -20,6 +20,7 @@ export default function ListMovies(){
 
   const [movies, setMovies] = useState<Movie[]>([])
   const [error, setError] = useState<string | null>(null);
+  const [yearMovie, setYearMovie] = useState<number>()
 
   const [inputMovie, setInputMovie] = useState<string>('');
   const [emptyMovie, setEmptyMovie] = useState<boolean>(false);
@@ -59,7 +60,14 @@ export default function ListMovies(){
     try {
       setLoader(true);
       setError(null);
-      const response = await api.get<MovieResponse>(`/v1/movies_api/search/${inputMovie.toLowerCase()}`);
+      
+      let response;
+      if(yearMovie){
+        response = await api.get<MovieResponse>(`/v1/movies_api/search/${inputMovie.toLowerCase()}/${yearMovie}`)
+      } else{
+        response = await api.get<MovieResponse>(`/v1/movies_api/search/${inputMovie.toLowerCase()}`);
+      }
+
       if (response.data.Error){
         setMovies([]);
         setEmptyMovie(true);
@@ -98,7 +106,13 @@ export default function ListMovies(){
             onKeyDown={keyHandler} 
             placeholder={`${errorInput ? 'Please... type your movie here 🤔': 'Type your movie! 😊'}`}
             role="searchInput"
-            />
+          />
+          <Input 
+            type="number" 
+            className='rounded-xl h-12 w-2/6 xl:w-1/6' 
+            placeholder='Year...' 
+            onChange={(e) => setYearMovie(parseInt(e.target.value))}
+          />
           <Button className='rounded-xl text-base h-12' type="submit" onClick={fetchMovie}>Search!</Button>
         </div>
         {loader && <Spinner />}
