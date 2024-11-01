@@ -1,5 +1,8 @@
 # back_end
 __pycache__
+db.sqlite3
 
 # front_end
 node_modules
+
+.env
