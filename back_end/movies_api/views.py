@@ -27,7 +27,7 @@ def get_movies(request):
 def search_movies(request, movie_name):
     try:
 
-        movie = Movies.objects.get(title=movie_name)
+        movie = Movies.objects.get(title=movie_name.lower())
 
         serilizer = MoviesSerializer(movie)
         return Response({'data': serilizer.data})
@@ -58,7 +58,7 @@ def movie_persistence(movie_data):
     try:
 
         new_movie = Movies(
-            title=str(movie_data['Title']),
+            title=str(movie_data['Title']).lower(),
             plot= str(movie_data['Plot']),
             year_realease= str(movie_data['Year']),
             img_url= str(movie_data['Poster'])
