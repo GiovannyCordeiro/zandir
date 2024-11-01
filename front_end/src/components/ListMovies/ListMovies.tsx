@@ -100,7 +100,7 @@ export default function ListMovies(){
     <>
       <main className='w-screen h-5/6 flex flex-col items-center justify-center gap-12 '>
         <div className="flex w-5/6 self-center justify-center space-x-2 md:w-4/6 lg:w-3/6">
-          <Input className={`rounded-xl h-12 text-base ${errorInput ? 'border-red-500': 'border-black'} xl:w-3/5`} 
+          <Input className={`rounded-xl h-12 text-base xl:w-3/5`} 
             type="text" 
             onChange={handlerChange} 
             onKeyDown={keyHandler} 
