@@ -1,17 +1,17 @@
 ![Zandir logo](./assets/imgs/zandir!.png)
 
-# Teste técnico: Zandir
+# 📌 Teste técnico: Zandir
 
 Olá! Me chamo [Giovanny dos Santos Cordeiro](https://giovannydev.com.br/) e essa é a realização
 do meu teste tecnico da empresa Zandir!
 
-## Preview da aplicação!
+## 💯 Preview da aplicação!
 
 <video width="320" height="240" controls>
   <source src="assets/preview.mp4" type="video/mp4">
 </video>
 
-### Responsividade:
+### ✔️ Responsividade:
 | ![Large](/assets/imgs/LG.png) | ![Medium](/assets/imgs/MD.png) | ![Small](/assets/imgs/SM.png) |
 |--------------------------------|--------------------------------|--------------------------------|
 
@@ -21,14 +21,14 @@ do meu teste tecnico da empresa Zandir!
 - [Principios técnicos realizados](#principios-técnicos-realizados)
 - [Possiveis melhorias](#possiveis-melhorias)
 
-## Requisitos
+## 🎯 Requisitos
 
 - NodeJS: Runtime JavaScript
 - NPM: Gerenciador de depências
 - Poetry: Gerenciador de depências e criador de ambientes virtuais
 - Python: Linguagem de programação
 
-## Setup do Projeto
+## 🚀 Setup do Projeto
 
 ### Setup Frontend
 1. `npm install`: Instalar todas as depêndencias necessárias
@@ -46,7 +46,7 @@ Dentro do ambiente virtual execute:
 4. Faça a configuração do seu arquivo `.env` de acordo com o modelo `.env.example`
 5. `task run`: Executar o ambiênte de desenvolvimento
 
-## Principios técnicos e aplicações realizadas:
+## 🌟 Principios técnicos e aplicações realizadas:
 
 Visando o melhor desenvolvimento do projeto em tempo ábil decidi 
 aplicar alguns principios técnicos que julgo muito impotânte
@@ -70,7 +70,7 @@ e acessibilidade para alguns usuários
 - **Feedback de carregamento**: Loading com finalidade de melhorar a experiência do usuário.
 - **Tratamento de exceções**: Tratamento de erros e exceções com finalidade de manter um fluxo objetivo no código.
 
-## Possiveis melhorias!
+## 💡 Possiveis melhorias!
 
 - **Aplicar tecnica de memorização na chamada da API externa**: Como o utilização de API
 de terceiros é uma pratica bem comum utilizar memorização para evitar fazer multiplas

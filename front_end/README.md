@@ -1,13 +1,13 @@
 ![Zandir logo](../assets//imgs/zandir!.png)
 
-# Front end
+# 🎨 Front-end
 
 Demonstração da aplicação com sua responsividade!
 
 | ![Large](../assets/imgs/LG.png) | ![Medium](../assets/imgs/MD.png) | ![Small](../assets/imgs/SM.png) |
 |--------------------------------|--------------------------------|--------------------------------|
 
-## Tecnologias 
+## 💻 Tecnologias 
 
 - React/Vite
 - Vitest
@@ -16,14 +16,14 @@ Demonstração da aplicação com sua responsividade!
 - React Dom
 - React Test Library
 
-# Setup da aplicação
+# 🚀 Setup da aplicação
 
 - `npm install`: Para instalar todas as depêndencias
 - `npm run dev`: Para iniciar a aplicação
 
 - `npm run test`: Para rodar os testes!
 
-# Estrutura da aplicação
+# 📖 Estrutura da aplicação
 
 - Todos os componentes estão reunidos dentro da Diretório `components` 
 com seus respectivos testes
