@@ -28,5 +28,5 @@ Here you can list the main routes of your API, and what are their expected reque
 | route               | description                                          
 |----------------------|-----------------------------------------------------
 | `GET v1/movies_api`     | Retorna os filmes registrados no banco de dados
-| `POST v1/movies_api/search/<movie>`     | Procura o filme no banco e caso não encontre procura na API Externa
-| `POST v1/movies_api/search/<movie>/<year>`     | Procura o filme no banco e caso não encontre procura na API Externa mas com filtro de ano junto
+| `GET v1/movies_api/search/<movie>`     | Procura o filme no banco e caso não encontre procura na API Externa
+| `GET v1/movies_api/search/<movie>/<year>`     | Procura o filme no banco e caso não encontre procura na API Externa mas com filtro de ano junto
